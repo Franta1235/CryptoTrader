@@ -1,0 +1,7 @@
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTrader\bin\Debug\CryptoTrader.exe
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTrader\bin\Debug\CryptoTrader.pdb
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTrader\obj\Debug\CryptoTrader.csproj.AssemblyReference.cache
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTrader\obj\Debug\CryptoTrader.csproj.SuggestedBindingRedirects.cache
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTrader\obj\Debug\CryptoTrader.csproj.CoreCompileInputs.cache
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTrader\obj\Debug\CryptoTrader.exe
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTrader\obj\Debug\CryptoTrader.pdb

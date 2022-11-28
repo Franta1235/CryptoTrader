@@ -1,0 +1,11 @@
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\bin\Debug\CryptoTraderTest.dll
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\bin\Debug\CryptoTraderTest.pdb
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\bin\Debug\CryptoTrader.exe
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\bin\Debug\nunit.framework.dll
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\bin\Debug\CryptoTrader.pdb
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\bin\Debug\nunit.framework.xml
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\obj\Debug\CryptoTraderTest.csproj.AssemblyReference.cache
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\obj\Debug\CryptoTraderTest.csproj.CoreCompileInputs.cache
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\obj\Debug\CryptoTraderTest.csproj.CopyComplete
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\obj\Debug\CryptoTraderTest.dll
+C:\Users\fkoznar\RiderProjects\CryptoTrader\CryptoTraderTest\obj\Debug\CryptoTraderTest.pdb

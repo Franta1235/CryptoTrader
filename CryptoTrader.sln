@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoTrader", "CryptoTrader\CryptoTrader.csproj", "{47A868A0-ED14-415F-AD04-815A2E6488B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoTraderTest", "CryptoTraderTest\CryptoTraderTest.csproj", "{47D48F35-DA5A-48EC-840A-6A975A513F56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47A868A0-ED14-415F-AD04-815A2E6488B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A868A0-ED14-415F-AD04-815A2E6488B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A868A0-ED14-415F-AD04-815A2E6488B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A868A0-ED14-415F-AD04-815A2E6488B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D48F35-DA5A-48EC-840A-6A975A513F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D48F35-DA5A-48EC-840A-6A975A513F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D48F35-DA5A-48EC-840A-6A975A513F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D48F35-DA5A-48EC-840A-6A975A513F56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
