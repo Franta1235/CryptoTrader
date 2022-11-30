@@ -15,5 +15,9 @@ namespace CryptoTrader.Runner
         public override void MakeOrderSell(Price price, double order) {
             throw new System.NotImplementedException();
         }
+
+        public override void SetAssets() {
+            throw new System.NotImplementedException();
+        }
     }
 }

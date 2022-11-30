@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using CryptoTrader.Helper;
-using CryptoTrader.Strategy;
 
 namespace CryptoTrader.Runner
 {
     public class HistoryRunner : ARunner
     {
-        private LinkedList<Price> _prices;
+        private readonly LinkedList<Price> _prices;
         private LinkedListNode<Price> _currentNone;
+        private const double Fee = 0.0015;
 
         public HistoryRunner(string pair) {
             _prices = GetPrices(pair);
@@ -27,11 +27,25 @@ namespace CryptoTrader.Runner
         }
 
         public override void MakeOrderBuy(Price price, double order) {
-            throw new System.NotImplementedException();
+            /*
+             * Example:
+             * Asset1 ~ USD
+             * Asset2 ~ BTC
+             */
+
+            // TODO how exactly fees works?
+            Asset1 -= order * price.BestAsk;
+            Asset2 += order * (1 - Fee);
         }
 
         public override void MakeOrderSell(Price price, double order) {
-            throw new System.NotImplementedException();
+            Asset1 += order * price.BestBid * (1 - Fee);
+            Asset2 -= order;
+        }
+
+        public override void SetAssets() {
+            Asset1 = 1;
+            Asset2 = 0;
         }
 
         private static LinkedList<Price> GetPrices(string pair) {

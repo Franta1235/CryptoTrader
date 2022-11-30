@@ -1,4 +1,6 @@
-﻿namespace CryptoTrader.Helper
+﻿using System;
+
+namespace CryptoTrader.Helper
 {
     public class Price
     {
@@ -25,6 +27,16 @@
 
         public override string ToString() {
             return $"Best bid: {BestBid}, Best Ask: {BestAsk}, TimeStamp: {Timestamp}";
+        }
+
+        /// <summary>
+        /// Create estimate bid/ask from price
+        /// </summary>
+        /// <param name="price"></param>
+        /// <param name="timestamp"></param>
+        /// <returns></returns>
+        public static Price PriceFactory(double price, double timestamp) {
+            throw new NotImplementedException();
         }
     }
 }

@@ -4,7 +4,7 @@ namespace CryptoTrader.Strategy
 {
     public abstract class HedgingStrategy : IStrategy
     {
-        private HistoryAnalyzer.HistoryAnalyzer _historyAnalyzer;
+        protected HistoryAnalyzer.HistoryAnalyzer HistoryAnalyzer;
 
         public double Advance(Price price) {
             throw new System.NotImplementedException();
