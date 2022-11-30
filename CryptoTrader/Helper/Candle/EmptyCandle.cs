@@ -3,29 +3,29 @@
     public class EmptyCandle : ICandle
     {
         private readonly Price _price;
-        private readonly int _openTimeStamp;
-        private readonly int _closeTimeStamp;
+        private readonly double _openTimestamp;
+        private readonly double _closeTimestamp;
 
-        public EmptyCandle(Price price, int openTimeStamp, int closeTimeStamp) {
+        public EmptyCandle(Price price, double openTimestamp, double closeTimestamp) {
             _price = price;
-            _openTimeStamp = openTimeStamp;
-            _closeTimeStamp = closeTimeStamp;
+            _openTimestamp = openTimestamp;
+            _closeTimestamp = closeTimestamp;
         }
 
-        public int GetOpenTimeStamp() {
-            return _openTimeStamp;
+        public double GetOpenTimestamp() {
+            return _openTimestamp;
         }
 
-        public int GetCloseTimeStamp() {
-            return _closeTimeStamp;
+        public double GetCloseTimestamp() {
+            return _closeTimestamp;
         }
 
         public Price GetOpenPrice() {
-            return new Price(_price.BestBid, _price.BestAsk, _openTimeStamp);
+            return new Price(_price.BestBid, _price.BestAsk, _openTimestamp);
         }
 
         public Price GetClosePrice() {
-            return new Price(_price.BestBid, _price.BestAsk, _closeTimeStamp);
+            return new Price(_price.BestBid, _price.BestAsk, _closeTimestamp);
         }
 
         public double GetSigma() {
@@ -33,7 +33,7 @@
         }
 
         public override string ToString() {
-            return $"Empty Candle: {_openTimeStamp} - {_closeTimeStamp}";
+            return $"Empty Candle: {_openTimestamp} - {_closeTimestamp}";
         }
     }
 }

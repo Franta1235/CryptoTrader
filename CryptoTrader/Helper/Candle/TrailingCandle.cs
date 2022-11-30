@@ -12,18 +12,22 @@ namespace CryptoTrader.Helper.Candle
             _candleInterval = candleInterval;
         }
 
+        /// <summary>
+        /// Adds new price and remove prices older than candle interval
+        /// </summary>
+        /// <param name="price"></param>
         public void Advance(Price price) {
             _prices.AddFirst(price);
-            while (price.TimeStamp - _prices.Last.Value.TimeStamp > (int)_candleInterval) {
+            while (price.Timestamp - _prices.Last.Value.Timestamp > (int)_candleInterval) {
                 _prices.RemoveLast();
             }
         }
 
-        public int GetOpenTimeStamp() {
+        public double GetOpenTimestamp() {
             throw new System.NotImplementedException();
         }
 
-        public int GetCloseTimeStamp() {
+        public double GetCloseTimestamp() {
             throw new System.NotImplementedException();
         }
 

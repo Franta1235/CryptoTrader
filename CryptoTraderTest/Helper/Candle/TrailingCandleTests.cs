@@ -15,8 +15,8 @@ namespace CryptoTraderTest.Helper.Candle
                 candle.Advance(price);
             }
 
-            Assert.AreEqual(99, candle.GetClosePrice().TimeStamp);
-            Assert.AreEqual(39, candle.GetOpenPrice().TimeStamp);
+            Assert.AreEqual(99, candle.GetClosePrice().Timestamp);
+            Assert.AreEqual(39, candle.GetOpenPrice().Timestamp);
         }
         
         [Test]
@@ -32,8 +32,8 @@ namespace CryptoTraderTest.Helper.Candle
                 candle.Advance(price);
             }
 
-            Assert.AreEqual(139, candle.GetClosePrice().TimeStamp);
-            Assert.AreEqual(79, candle.GetOpenPrice().TimeStamp);
+            Assert.AreEqual(139, candle.GetClosePrice().Timestamp);
+            Assert.AreEqual(79, candle.GetOpenPrice().Timestamp);
         }
         
         [Test]
@@ -49,8 +49,8 @@ namespace CryptoTraderTest.Helper.Candle
                 candle.Advance(price);
             }
 
-            Assert.AreEqual(189, candle.GetClosePrice().TimeStamp);
-            Assert.AreEqual(180, candle.GetOpenPrice().TimeStamp);
+            Assert.AreEqual(189, candle.GetClosePrice().Timestamp);
+            Assert.AreEqual(180, candle.GetOpenPrice().Timestamp);
         }
         
         [Test]
@@ -61,8 +61,8 @@ namespace CryptoTraderTest.Helper.Candle
                 candle.Advance(price);
             }
 
-            Assert.AreEqual(999999, candle.GetClosePrice().TimeStamp);
-            Assert.AreEqual(999939, candle.GetOpenPrice().TimeStamp);
+            Assert.AreEqual(999999, candle.GetClosePrice().Timestamp);
+            Assert.AreEqual(999939, candle.GetOpenPrice().Timestamp);
         }
     }
 }

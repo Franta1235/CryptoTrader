@@ -12,19 +12,30 @@ namespace CryptoTrader.HistoryAnalyzer
     {
         private readonly int _maxNodes;
         private readonly LinkedList<ICandle> _candles;
+        private int _completeCandles;
 
         public CandleList(int maxNodes) {
             _maxNodes = maxNodes;
             _candles = new LinkedList<ICandle>();
+            _completeCandles = 0;
         }
 
         /// <summary>
         /// If #nodes > max_nodes, then is removed last node
         /// </summary>
         /// <param name="candle"></param>
-        public new void AddFirst(ICandle candle) {
+        public new void Add(ICandle candle) {
             _candles.AddFirst(candle);
+
+            if (candle.GetType() == typeof(Candle)) {
+                _completeCandles++;
+            }
+
             if (_candles.Count > _maxNodes) {
+                if (_candles.Last.GetType() == typeof(Candle)) {
+                    _completeCandles--;
+                }
+
                 _candles.RemoveLast();
             }
         }
@@ -44,12 +55,13 @@ namespace CryptoTrader.HistoryAnalyzer
         }
 
         /// <summary>
-        /// Returns false, if something is wrong (Empty candles, candles with missing data etc)
+        /// Returns false, if something is wrong (Empty candles, candles with missing data etc), else return true
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
         public bool IsComplete() {
-            throw new NotImplementedException();
+            return _completeCandles == _maxNodes;
+            //throw new NotImplementedException();
         }
     }
 }

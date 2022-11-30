@@ -2,18 +2,29 @@
 {
     public class Price
     {
-        public Price(double bestBid, double bestAsk, int timeStamp) {
+        public Price(double bestBid, double bestAsk, double timestamp) {
             BestBid = bestBid;
             BestAsk = bestAsk;
-            TimeStamp = timeStamp;
+            Timestamp = timestamp;
         }
 
+        /// <summary>
+        /// Best bid on market
+        /// </summary>
         public double BestBid { get; }
+
+        /// <summary>
+        /// Best ask on market
+        /// </summary>
         public double BestAsk { get; }
-        public int TimeStamp { get; }
+
+        /// <summary>
+        /// Timestamp of the price
+        /// </summary>
+        public double Timestamp { get; }
 
         public override string ToString() {
-            return $"Best bid: {BestBid}, Best Ask: {BestAsk}, TimeStamp: {TimeStamp}";
+            return $"Best bid: {BestBid}, Best Ask: {BestAsk}, TimeStamp: {Timestamp}";
         }
     }
 }

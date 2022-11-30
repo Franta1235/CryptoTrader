@@ -8,24 +8,24 @@ namespace CryptoTrader.HistoryAnalyzer
     {
         private Price _currentPrice;
         private readonly CandleList _candles;
-        private readonly IncompleteCandle _incompleteCandle;
+        private readonly FillingCandle _fillingCandle;
         private readonly CandleInterval _candleInterval;
 
         public HistoryAnalyzer(int length, CandleInterval candleInterval) {
             _candleInterval = candleInterval;
-            _incompleteCandle = new IncompleteCandle(_candleInterval);
+            _fillingCandle = new FillingCandle(_candleInterval);
             _candles = new CandleList(length);
         }
 
         public void Advance(Price price) {
             _currentPrice = price;
-            var lastOpenTimeStamp = _incompleteCandle.GetOpenTimeStamp();
-            var currentTimeStamp = _currentPrice.TimeStamp;
+            var lastOpenTimeStamp = _fillingCandle.GetOpenTimestamp();
+            var currentTimeStamp = _currentPrice.Timestamp;
             if (currentTimeStamp - lastOpenTimeStamp >= (int)_candleInterval) {
                 AddCandle();
             }
 
-            _incompleteCandle.Advance(price);
+            _fillingCandle.Advance(price);
         }
 
         public double PredictVolatility() {
@@ -33,27 +33,31 @@ namespace CryptoTrader.HistoryAnalyzer
         }
 
         private void AddCandle() {
-            var candle = new Candle(_incompleteCandle, _candleInterval);
-            _candles.AddFirst(candle);
+            var candle = new Candle(_fillingCandle, _candleInterval);
+            _candles.Add(candle);
 
-            var lastOpenTimeStamp = _incompleteCandle.GetOpenTimeStamp();
-            var currentTimeStamp = GetCurrentTimeStamp();
+            var lastOpenTimeStamp = _fillingCandle.GetOpenTimestamp();
+            var currentTimeStamp = GetCurrentTimestamp();
             var missingCandles = (currentTimeStamp - lastOpenTimeStamp) / (int)_candleInterval - 1;
             for (var i = 0; i < missingCandles; i++) {
                 var emptyCandle = new EmptyCandle(
-                    _incompleteCandle.GetClosePrice(),
+                    _fillingCandle.GetClosePrice(),
                     lastOpenTimeStamp + (i + 1) * (int)_candleInterval,
                     lastOpenTimeStamp + (i + 2) * (int)_candleInterval);
-                _candles.AddFirst(emptyCandle);
+                _candles.Add(emptyCandle);
             }
         }
 
-        private int GetCurrentTimeStamp() {
-            return _currentPrice.TimeStamp;
+        private double GetCurrentTimestamp() {
+            return _currentPrice.Timestamp;
         }
 
         public override string ToString() {
             return _candles.GetCandles().Aggregate(string.Empty, (current, candle) => current + $"{candle}\n");
+        }
+
+        public bool IsComplete() {
+            return _candles.IsComplete();
         }
     }
 }

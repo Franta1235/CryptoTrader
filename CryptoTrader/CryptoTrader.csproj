@@ -43,11 +43,12 @@
         <Compile Include="Helper\Candle\CandleInterval.cs" />
         <Compile Include="Helper\Candle\EmptyCandle.cs" />
         <Compile Include="Helper\Candle\ICandle.cs" />
-        <Compile Include="Helper\Candle\IncompleteCandle.cs" />
+        <Compile Include="Helper\Candle\FillingCandle.cs" />
         <Compile Include="Helper\Candle\TrailingCandle.cs" />
         <Compile Include="Helper\Price.cs" />
         <Compile Include="HistoryAnalyzer\CandleList.cs" />
         <Compile Include="HistoryAnalyzer\HistoryAnalyzer.cs" />
+        <Compile Include="HistoryAnalyzer\HistoryAnalyzerFactory.cs" />
         <Compile Include="HistoryAnalyzer\IHistoryAnalyzer.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,7 +57,9 @@
         <Compile Include="Runner\HistoryRunner.cs" />
         <Compile Include="Runner\IRunner.cs" />
         <Compile Include="Runner\SimulatedRunner.cs" />
+        <Compile Include="Strategy\HedgingStrategy.cs" />
         <Compile Include="Strategy\IStrategy.cs" />
+        <Compile Include="Strategy\TestStrategy.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

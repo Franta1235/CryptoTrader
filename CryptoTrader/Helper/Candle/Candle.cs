@@ -10,20 +10,20 @@ namespace CryptoTrader.Helper.Candle
         private readonly Price _closePrice;
         private readonly double _sigma;
 
-        public Candle(IncompleteCandle incompleteCandle, CandleInterval candleInterval) {
-            var prices = incompleteCandle.GetPrices();
+        public Candle(FillingCandle fillingCandle, CandleInterval candleInterval) {
+            var prices = fillingCandle.GetPrices();
             _openPrice = prices.Last.Value;
             _closePrice = prices.First.Value;
             _candleInterval = candleInterval;
             _sigma = EstimateSigma(prices);
         }
 
-        public int GetOpenTimeStamp() {
-            return _openPrice.TimeStamp - _openPrice.TimeStamp % (int)_candleInterval;
+        public double GetOpenTimestamp() {
+            return _openPrice.Timestamp - _openPrice.Timestamp % (int)_candleInterval;
         }
 
-        public int GetCloseTimeStamp() {
-            return GetOpenTimeStamp() + (int)_candleInterval;
+        public double GetCloseTimestamp() {
+            return GetOpenTimestamp() + (int)_candleInterval;
         }
 
         public Price GetOpenPrice() {
@@ -39,9 +39,14 @@ namespace CryptoTrader.Helper.Candle
         }
 
         public override string ToString() {
-            return $"Candle: {GetOpenTimeStamp()} - {GetCloseTimeStamp()}";
+            return $"Candle: {GetOpenTimestamp()} - {GetCloseTimestamp()}";
         }
 
+        /// <summary>
+        /// Estimates sigma
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
         private static double EstimateSigma(LinkedList<Price> prices) {
             //TODO not complete
             

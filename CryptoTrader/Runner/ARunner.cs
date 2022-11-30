@@ -1,4 +1,5 @@
-﻿using CryptoTrader.Helper;
+﻿using System;
+using CryptoTrader.Helper;
 using CryptoTrader.Strategy;
 
 namespace CryptoTrader.Runner
