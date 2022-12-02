@@ -44,6 +44,8 @@
     <ItemGroup>
         <Compile Include="Helper\Candle\FillingCandleTests.cs" />
         <Compile Include="Helper\Candle\TrailingCandleTests.cs" />
+        <Compile Include="Helper\Python\PythonProcessTests.cs" />
+        <Compile Include="Helper\Python\PythonScriptRunnerTests.cs" />
         <Compile Include="HistoryAnalyzer\CandleListTests.cs" />
         <Compile Include="HistoryAnalyzer\HistoryAnalyzerTests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +56,9 @@
         <Project>{47a868a0-ed14-415f-ad04-815a2e6488b7}</Project>
         <Name>CryptoTrader</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Helper\Python\TestScripts\TestScript1.py" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
