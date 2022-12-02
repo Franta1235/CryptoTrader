@@ -60,6 +60,7 @@
         <Compile Include="Runner\IRunner.cs" />
         <Compile Include="Runner\SimulatedRunner.cs" />
         <Compile Include="Strategy\HedgingStrategy\AHedgingStrategy.cs" />
+        <Compile Include="Strategy\HedgingStrategy\GeneralMerton.cs" />
         <Compile Include="Strategy\IStrategy.cs" />
         <Compile Include="Strategy\TestStrategy.cs" />
     </ItemGroup>
