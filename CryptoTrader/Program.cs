@@ -9,11 +9,13 @@ namespace CryptoTrader
 {
     internal class Program
     {
-        [SuppressMessage("ReSharper.DPA", "DPA0001: Memory allocation issues")]
+        /*
+         * Binance API
+         * API Key      9xYygB7Vwqice8X3qIWShpWCvmksTFCNAXGJ8UQHGVVyV91lAySNhlxQPkKMLLvd
+         * Secret Key   hMqWQbuAvospiUBwRjsWKQh8fOI7Er0o4uKQv8PvQHRpTVRXihYgGIOvyNWJ1pzT
+         */
+        
         public static void Main(string[] args) {
-            var runner = new HistoryRunner("BTCETH");
-            var strategy = new TestStrategy();
-            runner.Run(strategy);
         }
     }
 }
